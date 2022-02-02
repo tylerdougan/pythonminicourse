@@ -554,7 +554,7 @@ to, you can also specify the type of data in your list.
 </pre></div>
 </div>
 <p>You can visualize your array this way:</p>
-<img alt="../_images/np_array.png" src="../_images/np_array.png" />
+<img src="../_images/np_array.png" alt="../_images/np_array.png" width="600" />
 <p><em>Be aware that these visualizations are meant to simplify ideas and give you a basic understanding of NumPy concepts and mechanics. Arrays and array operations are much more complicated than are captured here!</em></p>
 <p>Besides creating an array from a sequence of elements, you can easily create an
 array filled with <code class="docutils literal notranslate"><span class="pre">0</span></code>’s:</p>
@@ -725,7 +725,7 @@ lists.</p>
 </pre></div>
 </div>
 <p>You can visualize it this way:</p>
-<img alt="../_images/np_indexing.png" src="../_images/np_indexing.png" />
+<img src="../_images/np_indexing.png" alt="../_images/np_indexing.png" width="600" />
 <p>You may want to take a section of your array or specific array elements to use
 in further analysis or additional operations. To do that, you’ll need to subset,
 slice, and/or index your arrays.</p>
@@ -812,7 +812,7 @@ and <a class="reference internal" href="basics.indexing.html#basics-indexing"><s
 <p>Once you’ve created your arrays, you can start to work with them.  Let’s say,
 for example, that you’ve created two arrays, one called “data” and one called
 “ones”</p>
-<img alt="../_images/np_array_dataones.png" src="../_images/np_array_dataones.png" />
+<img src="../_images/np_array_dataones.png" alt="../_images/np_array_dataones.png" width="600" />
 <p>You can add the arrays together with the plus sign.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
@@ -820,7 +820,7 @@ for example, that you’ve created two arrays, one called “data” and one cal
 <span class="go">array([2, 3])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_data_plus_ones.png" src="../_images/np_data_plus_ones.png" />
+<img src="../_images/np_data_plus_ones.png" alt="../_images/np_data_plus_ones.png" width="600" />
 <p>You can, of course, do more than just addition!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">-</span> <span class="n">ones</span>
 <span class="go">array([0, 1])</span>
@@ -830,7 +830,7 @@ for example, that you’ve created two arrays, one called “data” and one cal
 <span class="go">array([1., 1.])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_sub_mult_divide.png" src="../_images/np_sub_mult_divide.png" />
+<img src="../_images/np_sub_mult_divide.png" alt="../_images/np_sub_mult_divide.png" width="600" />
 <p>Basic operations are simple with NumPy. If you want to find the sum of the
 elements in an array, you’d use <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. This works for 1D arrays, 2D arrays,
 and arrays in higher dimensions.</p>
@@ -869,7 +869,7 @@ convert the information to kilometers. You can perform this operation with:</p>
 <span class="go">array([1.6, 3.2])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_multiply_broadcasting.png" src="../_images/np_multiply_broadcasting.png" />
+<img src="../_images/np_multiply_broadcasting.png" alt="../_images/np_multiply_broadcasting.png" width="600" />
 <p>NumPy understands that the multiplication should happen with each cell. That
 concept is called <strong>broadcasting</strong>. Broadcasting is a mechanism that allows
 NumPy to perform operations on arrays of different shapes. The dimensions of
@@ -894,7 +894,7 @@ deviation, and more.</p>
 <span class="go">3.0</span>
 </pre></div>
 </div>
-<img alt="../_images/np_aggregation.png" src="../_images/np_aggregation.png" />
+<img src="../_images/np_aggregation.png" alt="../_images/np_aggregation.png" width="600" />
 <p>Let’s start with this array, called “a”</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.45053314</span><span class="p">,</span> <span class="mf">0.17296777</span><span class="p">,</span> <span class="mf">0.34376245</span><span class="p">,</span> <span class="mf">0.5510652</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mf">0.54627315</span><span class="p">,</span> <span class="mf">0.05093587</span><span class="p">,</span> <span class="mf">0.40067661</span><span class="p">,</span> <span class="mf">0.55645993</span><span class="p">],</span>
@@ -935,7 +935,7 @@ represent them in NumPy.</p>
 <span class="go">       [5, 6]])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_create_matrix.png" src="../_images/np_create_matrix.png" />
+<img src="../_images/np_create_matrix.png" alt="../_images/np_create_matrix.png" width="600" />
 <p>Indexing and slicing operations are useful when you’re manipulating matrices:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="go">2</span>
@@ -946,7 +946,7 @@ represent them in NumPy.</p>
 <span class="go">array([1, 3])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_matrix_indexing.png" src="../_images/np_matrix_indexing.png" />
+<img src="../_images/np_matrix_indexing.png" alt="../_images/np_matrix_indexing.png" width="600" />
 <p>You can aggregate matrices the same way you aggregated vectors:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="go">6</span>
@@ -956,7 +956,7 @@ represent them in NumPy.</p>
 <span class="go">21</span>
 </pre></div>
 </div>
-<img alt="../_images/np_matrix_aggregation.png" src="../_images/np_matrix_aggregation.png" />
+<img src="../_images/np_matrix_aggregation.png" alt="../_images/np_matrix_aggregation.png" width="600" />
 <p>You can aggregate all the values in a matrix and you can aggregate them across
 columns or rows using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> parameter. To illustrate this point, let’s
 look at a slightly modified dataset:</p>
@@ -971,7 +971,7 @@ look at a slightly modified dataset:</p>
 <span class="go">array([2, 5, 6])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_matrix_aggregation_row.png" src="../_images/np_matrix_aggregation_row.png" />
+<img src="../_images/np_matrix_aggregation_row.png" alt="../_images/np_matrix_aggregation_row.png" width="600" />
 <p>Once you’ve created your matrices, you can add and multiply them using
 arithmetic operators if you have two matrices that are the same size.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
@@ -981,7 +981,7 @@ arithmetic operators if you have two matrices that are the same size.</p>
 <span class="go">       [4, 5]])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_matrix_arithmetic.png" src="../_images/np_matrix_arithmetic.png" />
+<img src="../_images/np_matrix_arithmetic.png" alt="../_images/np_matrix_arithmetic.png" width="600" />
 <p>You can do these arithmetic operations on matrices of different sizes, but only
 if one matrix has only one column or one row. In this case, NumPy will use its
 broadcast rules for the operation.</p>
@@ -1028,7 +1028,7 @@ All you need to do is pass in the number of elements you want it to generate:</p
 <span class="go">array([0.63696169, 0.26978671, 0.04097352])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_ones_zeros_random.png" src="../_images/np_ones_zeros_random.png" />
+<img src="../_images/np_ones_zeros_random.png" alt="../_images/np_ones_zeros_random.png" width="600" />
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">ones()</span></code>, <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>, and <code class="docutils literal notranslate"><span class="pre">random()</span></code> to create
 a 2D array if you give them a tuple describing the dimensions of the matrix:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -1045,7 +1045,7 @@ a 2D array if you give them a tuple describing the dimensions of the matrix:</p>
 <span class="go">       [0.72949656, 0.54362499]])  # may vary</span>
 </pre></div>
 </div>
-<img alt="../_images/np_ones_zeros_matrix.png" src="../_images/np_ones_zeros_matrix.png" />
+<img src="../_images/np_ones_zeros_matrix.png" alt="../_images/np_ones_zeros_matrix.png" width="600" />
 <p>Read more about creating arrays, filled with <code class="docutils literal notranslate"><span class="pre">0</span></code>’s, <code class="docutils literal notranslate"><span class="pre">1</span></code>’s, other values or
 uninitialized, at <a class="reference internal" href="../reference/routines.array-creation.html#routines-array-creation"><span class="std std-ref">array creation routines</span></a>.</p>
 </section>
@@ -1122,7 +1122,7 @@ argument. To find the unique rows, specify <code class="docutils literal notrans
 <hr class="docutils" />
 <p>It’s common to need to transpose your matrices. NumPy arrays have the property
 <code class="docutils literal notranslate"><span class="pre">T</span></code> that allows you to transpose a matrix.</p>
-<img alt="../_images/np_transposing_reshaping.png" src="../_images/np_transposing_reshaping.png" />
+<img src="../_images/np_transposing_reshaping.png" alt="../_images/np_transposing_reshaping.png" width="600" />
 <p>You may also need to switch the dimensions of a matrix. This can happen when,
 for example, you have a model that expects a certain input shape that is
 different from your dataset. This is where the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> method can be useful.
@@ -1136,7 +1136,7 @@ You simply need to pass in the new dimensions that you want for the matrix.</p>
 <span class="go">       [5, 6]])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_reshape.png" src="../_images/np_reshape.png" />
+<img src="../_images/np_reshape.png" alt="../_images/np_reshape.png" width="600" />
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">.transpose()</span></code> to reverse or change the axes of an array
 according to the values you specify.</p>
 <p>If you start with this array:</p>
@@ -1418,7 +1418,7 @@ than Python.</p>
 the things that make NumPy so widely used in the scientific Python community.</p>
 <p>For example, this is the mean square error formula (a central formula used in
 supervised machine learning models that deal with regression):</p>
-<img alt="../_images/np_MSE_formula.png" src="../_images/np_MSE_formula.png" />
+<img src="../_images/np_MSE_formula.png" alt="../_images/np_MSE_formula.png" width="600" />
 <p>Implementing this formula is simple and straightforward in NumPy:</p>
 <img alt="../_images/np_MSE_implementation.png" src="../_images/np_MSE_implementation.png" />
 <p>What makes this work so well is that <code class="docutils literal notranslate"><span class="pre">predictions</span></code> and <code class="docutils literal notranslate"><span class="pre">labels</span></code> can contain
@@ -1456,7 +1456,7 @@ easiest way to do this is to use
 <span class="go"> [&#39;SIA&#39; 74000000]]</span>
 </pre></div>
 </div>
-<img alt="../_images/np_pandas.png" src="../_images/np_pandas.png" />
+<img src="../_images/np_pandas.png" alt="../_images/np_pandas.png" width="600" />
 <p>It’s simple to use Pandas in order to export your array as well. If you are new
 to NumPy, you may want to  create a Pandas dataframe from the values in your
 array and then write the data frame to a CSV file with Pandas.</p>
@@ -1485,7 +1485,7 @@ array and then write the data frame to a CSV file with Pandas.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pd.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/np_readcsv.png" src="../_images/np_readcsv.png" />
+<img src="../_images/np_readcsv.png" alt="../_images/np_readcsv.png" width="600" />
 
 <div class="highlight-default notranslate"><div class="highlight"></div>
 </div>
@@ -1522,7 +1522,7 @@ Learn how to install Pandas with the
 </pre></div>
 </div>
 <figure class="align-center">
-<img alt="../_images/matplotlib1.png" class="plot-directive" src="../_images/matplotlib1.png" />
+<img src="../_images/matplotlib1.png" alt="../_images/matplotlib1.png" width="500" class="plot-directive" />
 </figure>
 <p>For example, you can plot a 1D array like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1532,7 +1532,7 @@ Learn how to install Pandas with the
 </pre></div>
 </div>
 <figure class="align-center">
-<img alt="../_images/matplotlib2.png" class="plot-directive" src="../_images/matplotlib2.png" />
+<img src="../_images/matplotlib2.png" alt="../_images/matplotlib2.png" width="500" class="plot-directive" />
 </figure>
 <p>With Matplotlib, you have access to an enormous number of visualization options.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1547,7 +1547,7 @@ Learn how to install Pandas with the
 </pre></div>
 </div>
 <figure class="align-center">
-<img alt="../_images/matplotlib3.png" class="plot-directive" src="../_images/matplotlib3.png" />
+<img src="../_images/matplotlib3.png" alt="../_images/matplotlib3.png" width="500" class="plot-directive" />
 </figure>
 <p>To read more about Matplotlib and what it can do, take a look at
 <a class="reference external" href="https://matplotlib.org/">the official documentation</a>.
