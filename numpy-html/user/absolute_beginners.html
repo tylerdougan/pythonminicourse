@@ -993,7 +993,7 @@ broadcast rules for the operation.</p>
 <span class="go">       [6, 7]])</span>
 </pre></div>
 </div>
-<img alt="../_images/np_matrix_broadcasting.png" src="../_images/np_matrix_broadcasting.png" />
+<img src="../_images/np_matrix_broadcasting.png" alt="../_images/np_matrix_broadcasting.png" width="600" />
 <p>Be aware that when NumPy prints N-dimensional arrays, the last axis is looped
 over the fastest while the first axis is the slowest. For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -1420,17 +1420,17 @@ the things that make NumPy so widely used in the scientific Python community.</p
 supervised machine learning models that deal with regression):</p>
 <img src="../_images/np_MSE_formula.png" alt="../_images/np_MSE_formula.png" width="600" />
 <p>Implementing this formula is simple and straightforward in NumPy:</p>
-<img alt="../_images/np_MSE_implementation.png" src="../_images/np_MSE_implementation.png" />
+<img src="../_images/np_MSE_implementation.png" alt="../_images/np_MSE_implementation.png" width="600" />
 <p>What makes this work so well is that <code class="docutils literal notranslate"><span class="pre">predictions</span></code> and <code class="docutils literal notranslate"><span class="pre">labels</span></code> can contain
 one or a thousand values. They only need to be the same size.</p>
 <p>You can visualize it this way:</p>
-<img alt="../_images/np_mse_viz1.png" src="../_images/np_mse_viz1.png" />
+<img src="../_images/np_mse_viz1.png" alt="../_images/np_mse_viz1.png" width="600" />
 <p>In this example, both the predictions and labels vectors contain three values,
 meaning <code class="docutils literal notranslate"><span class="pre">n</span></code> has a value of three. After we carry out subtractions the values
 in the vector are squared. Then NumPy sums the values, and your result is the
 error value for that prediction and a score for the quality of the model.</p>
-<img alt="../_images/np_mse_viz2.png" src="../_images/np_mse_viz2.png" />
-<img alt="../_images/np_MSE_explanation2.png" src="../_images/np_MSE_explanation2.png" />
+<img src="../_images/np_mse_viz2.png" alt="../_images/np_mse_viz2.png" width="600" />
+<img src="../_images/np_MSE_explanation2.png" alt="../_images/np_MSE_explanation2.png" width="600" />
 </section>
 <section id="importing-and-exporting-a-csv">
   <h2>Importing and exporting a CSV<a class="headerlink" href="#importing-and-exporting-a-csv" title="Permalink to this headline">¶</a></h2>
