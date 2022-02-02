@@ -49,9 +49,7 @@
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
+    <label for="menuToggler" class="toggler__label"> </label>
     <nav class="nav-content" role="navigation">
          <a href="https://www.python.org/" class="nav-logo">
              <img src="../_static/py.svg" alt="Logo"/>
@@ -127,10 +125,7 @@
             <div class="language_switcher_placeholder"></div>
             <div class="version_switcher_placeholder"></div>
           </li>
-          <li>
-              
-          </li>
-    <li id="cpython-language-and-version">
+<li id="cpython-language-and-version">
       <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
@@ -159,7 +154,7 @@
           <div class="body" role="main">
             
   <div class="section" id="an-informal-introduction-to-python">
-<span id="tut-informal"></span><h1><span class="section-number">3. </span>An Informal Introduction to Python<a class="headerlink" href="#an-informal-introduction-to-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>An Informal Introduction to Python<a class="headerlink" href="#an-informal-introduction-to-python" title="Permalink to this headline">¶</a></h1>
 <p>In the following examples, input and output are distinguished by the presence or
 absence of prompts (<a class="reference internal" href="../glossary.html#term-0"><span class="xref std std-term">&gt;&gt;&gt;</span></a> and <a class="reference internal" href="../glossary.html#term-..."><span class="xref std std-term">…</span></a>): to repeat the example, you must type
 everything after the prompt, when the prompt appears; lines that do not begin
@@ -178,24 +173,24 @@ literal.  A hash character within a string literal is just a hash character.
 Since comments are to clarify code and are not interpreted by Python, they may
 be omitted when typing in examples.</p>
 <p>Some examples:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is the first comment</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="c1"># this is the first comment</span>
 <span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># and this is the second comment</span>
           <span class="c1"># ... and now a third!</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# This is not a comment because it&#39;s inside quotes.&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="using-python-as-a-calculator">
-<span id="tut-calculator"></span><h2><span class="section-number">3.1. </span>Using Python as a Calculator<a class="headerlink" href="#using-python-as-a-calculator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Using Python as a Calculator<a class="headerlink" href="#using-python-as-a-calculator" title="Permalink to this headline">¶</a></h2>
 <p>Let’s try some simple Python commands.  Start the interpreter and wait for the
 primary prompt, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.  (It shouldn’t take long.)</p>
 <div class="section" id="numbers">
-<span id="tut-numbers"></span><h3><span class="section-number">3.1.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h3>
 <p>The interpreter acts as a simple calculator: you can type an expression at it
 and it will write the value.  Expression syntax is straightforward: the
 operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> work just like in most other languages
 (for example, Pascal or C); parentheses (<code class="docutils literal notranslate"><span class="pre">()</span></code>) can be used for grouping.
 For example:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="go">4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span>
 <span class="go">20</span>
@@ -211,7 +206,7 @@ the ones with a fractional part (e.g. <code class="docutils literal notranslate"
 <p>Division (<code class="docutils literal notranslate"><span class="pre">/</span></code>) always returns a float.  To do <a class="reference internal" href="../glossary.html#term-floor-division"><span class="xref std std-term">floor division</span></a> and
 get an integer result (discarding any fractional result) you can use the <code class="docutils literal notranslate"><span class="pre">//</span></code>
 operator; to calculate the remainder you can use <code class="docutils literal notranslate"><span class="pre">%</span></code>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">17</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># classic division returns a float</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">17</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># classic division returns a float</span>
 <span class="go">5.666666666666667</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">17</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># floor division discards the fractional part</span>
@@ -223,7 +218,7 @@ operator; to calculate the remainder you can use <code class="docutils literal n
 </pre></div>
 </div>
 <p>With Python, it is possible to use the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator to calculate powers <a class="footnote-reference brackets" href="#id3" id="id1">1</a>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># 5 squared</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># 5 squared</span>
 <span class="go">25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">**</span> <span class="mi">7</span>  <span class="c1"># 2 to the power of 7</span>
 <span class="go">128</span>
@@ -231,7 +226,7 @@ operator; to calculate the remainder you can use <code class="docutils literal n
 </div>
 <p>The equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) is used to assign a value to a variable. Afterwards, no
 result is displayed before the next interactive prompt:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">height</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
 <span class="go">900</span>
@@ -239,7 +234,7 @@ result is displayed before the next interactive prompt:</p>
 </div>
 <p>If a variable is not “defined” (assigned a value), trying to use it will
 give you an error:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>  <span class="c1"># try to access an undefined variable</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>  <span class="c1"># try to access an undefined variable</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">NameError</span>: <span class="n">name &#39;n&#39; is not defined</span>
@@ -247,7 +242,7 @@ give you an error:</p>
 </div>
 <p>There is full support for floating point; operators with mixed type operands
 convert the integer operand to floating point:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">*</span> <span class="mf">3.75</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">*</span> <span class="mf">3.75</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="go">14.0</span>
 </pre></div>
 </div>
@@ -259,7 +254,6 @@ and uses the <code class="docutils literal notranslate"><span class="pre">j</spa
 </div>
 </div>
 <div class="section" id="first-steps-towards-programming">
-<span id="tut-firststeps"></span>
 <div class="highlight-python3 notranslate"><div class="highlight"></div>
 </div>
 <p class="rubric">Footnotes</p>
@@ -273,26 +267,5 @@ and get <code class="docutils literal notranslate"><span class="pre">9</span></c
 </dl>
 </div>
 </div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">3. An Informal Introduction to Python</a><ul>
-<li><a class="reference internal" href="#using-python-as-a-calculator">3.1. Using Python as a Calculator</a><ul>
-  <li><a class="reference internal" href="#numbers">3.1.1. Numbers</a></li>
-  
-  </ul>
-</li>
-
-</ul>
-</li>
-</ul>
-
-  </body>
+</body>
 </html>
