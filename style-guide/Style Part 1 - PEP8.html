@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class=" hpllyspr idc0_336"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="Style%20Part%201%20-%20PEP8_files/book.css">
+<script src="Style%20Part%201%20-%20PEP8_files/book.js"></script>
+
+<style>
+pre.reveal { }  /* mark pre that should get this setup */
+span.phide { display:none; }
+span.pshow { color:darkgreen;} /* display:inline; */
+
+
+</style>
+
+<title>Style Part 1 - PEP8</title></head>
+<body>
+
+<nav><div id="toc"><p class="entry big"><a href="https://cs.stanford.edu/people/nick/py/">Python Guide</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-about.html">About Python</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-interpreter.html">Python Interpreter</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-command.html">Command Line</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-keyboard.html">Keyboard Shortcuts</a></p>
+<p class="entry yellow"><a href="https://cs.stanford.edu/people/nick/py/python-style1.html">Style1</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-style-readable.html">Style Readable</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-style-decomposition.html">Style Decomp</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-var.html">Variables</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-math.html">Math</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-function.html">Functions</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-debugging.html">Debugging</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-doctest.html">Doctests</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-for.html">For Loop</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-while.html">While Loop</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-if.html">If and Comparisons</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-boolean.html">Boolean and or not</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-range.html">Range</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-string.html">Strings</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-print.html">print() Standard Out</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-input.html">input()</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-file.html">File Read Write</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-list.html">Lists</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-main.html">main() Command Line Args</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-dict.html">Dicts</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-nocopy.html">Python No Copy / is</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-tuple.html">Tuples</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-map-lambda.html">Map Lambda</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-comprehension.html">Comprehensions</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-sort.html">Sorting</a></p>
+<p class="entry">&nbsp;</p>
+</div></nav>
+
+<main>
+
+<h1>Python Style Part 1 - PEP8</h1>
+
+
+<p>CS106A does not just teach coding. It has always taught how to write <i>clean</i> code with good style.
+Your section leader will talk with you about the correctness of code, but also pointers for good style.
+
+</p><p>Messy code works poorly — hard to read, hard to debug. To help 
+you develop the right habits, we want you to always turn in clean code, 
+and of course all of our examples should also have good clean style.
+
+
+</p><h1>The Word is Readable</h1>
+
+<p>The goal of good style is "readable" code, meaning that when someone 
+sweeps their eye over the code, what that code does shines through.
+
+</p><p>Experience has shown that readable code is less time consuming to
+ build and debug. Debugging especially can be a huge time-sink, so 
+learning to write clean code and keep it clean is how we will do things 
+all the time. Like surgeons keeping their hands clean, it's the right 
+way to do it and we will try to develop the habit all the time.
+
+<!-- could mention the principle of least surprise which is congruent with readable here -->
+
+<!-- xx possible Aside: the black hole gravity well of messy style -->
+
+</p><h2>Readability 1 - Function and Variable Names</h2>
+
+<p>The first step to good readability is a good variable and function names, like this example: 
+
+</p><pre>...
+url = get_browser_url()
+if has_security_problem(url):
+    display_alert('That url looks sketchy!')
+else:
+    html = download_url(url)
+    display_html(html)
+...
+</pre>
+
+<p>The narrative steps the code takes are apparent from the good 
+function and variable names (essentially the verbs and nouns in the 
+narrative). No other comments are necessary here. The names alone make 
+it readable.
+
+</p><p>The functions are the actions in the code, so we prefer verb 
+names like "display_alert" or "remove_url" that say what the function 
+does. Variables are like the nouns of the code, so we prefer names that 
+reflect what that variable stores like "urls" or "original_image" or 
+"resized_image". We'll talk about naming in more detail in the Style 2 
+document.
+
+<!--
+
+<p>The second
+ Readability stems from choosingExperience shows that the best code is "readable" - someone sweeping their eye over it can see what it does and how its parts fit together.
+
+<p>xx talk about var and fn naming .. does that go here or later?
+
+-->
+
+</p><h2>Readability 2 - PEP8 Tactics</h2>
+
+<p>Python is developed as a collaborative, free and open source project.
+ A "PEP" (Python Enhancement Proposal) is a written proposal used in 
+Python development.
+
+</p><p>One of the earliest PEPs, <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>,
+ is a consensus set of style and formatting rules for writing "standard"
+ style Python, so your code has the right look for anyone else reading 
+or modifying it. This is very much like English spelling reform, where 
+"public" is the standard spelling, and "publick" is out of use and looks
+ weird and a little irritating.
+
+</p><p>Here are the most important PEP8 rules we will use. The code you turn in should abide by PEP8.
+
+<!--
+<p>xx could talk about Bike Shed https://en.wikipedia.org/wiki/Law_of_triviality
+-->
+
+<span id="indent"></span>
+</p><h3>Indent 4 Spaces</h3>
+
+<p>Indent code with 4 spaces. A def/if/for/while line ends with a colon,
+ and its contained lines begin on the next line, all indented 4 spaces, 
+like this:
+
+</p><pre>if color == 'red':
+    color = 'green'
+    print(color)
+</pre>
+
+<p>Early on with Python, some people use 2 spaces or tabs. Those practices have died out, and now 4 spaces is the standard.
+
+<span id="singlespace"></span>
+</p><h3>Single Space Between Items</h3>
+
+<p>Most lines of code have a mix of variables and "operators" such as as <code class="b">+ * / = &gt;=</code>. Use a single space to separate the operators and items and operators from each other:
+
+</p><pre>bound = x * 12 + 13
+if x &gt;= 4:
+    print(x + 2)
+</pre>
+
+<!--
+<li>(<i>exception</i>) possibly helpful to vary spaces to reflect precedence
+<pre>
+a * b + c + c * d    # strict PEP8 spacing
+a*b + c + c*d        # OK with this if done logically
+</pre>
+
+<p>exception for named parameters I think
+-->
+
+<span id="parenthesis"></span>
+<h3>Parenthesis No Space</h3>
+
+<p>The left and right parenthesis and square brackets do not have spaces
+ separating them from their contents. The left parenthesis for a 
+function call is right next to the function name:
+
+</p><pre>run_along(1, 2 * 3, 'hi')
+bark()
+lst = [1, 2, z * 6]
+</pre>
+
+<span id="spaceafter"></span>
+<h3>Space After Comma/Colon</h3>
+
+<p>A comma or colon has 1 space after it, but no spaces before it.
+
+</p><pre>foo(1, 'hello', 42)  # comma: 0 space before, 1 space after
+[1, 2, 3]            # e.g. list
+{'a': 1, 'b': 2}     # e.g. dict
+</pre>
+
+<span id="slice"></span>
+<h3>Slice Exception</h3>
+
+<p>Slices are an exception to the above rule. It's acceptable for the 
+colon in a slice to have no spaces, and that's how it's most often 
+written, like this:
+
+</p><pre>s[start:end + 1]     # slice - no spaces
+</pre>
+
+<p>The PEP8 rule is permissive, that the slice colon should have no spaces, as above, or 1 space on either side, like a <code>+</code>.
+
+<span id="quote"></span>
+</p>
+<h3>2 Blank Lines Before Def</h3>
+
+<p>PEP8 requires 2 blank lines before each def in a file. This is one of
+ the weaker PEP8 rules. We will not be very upset about your code if it 
+has 3 lines between functions.
+
+
+</p><h3>Blank Lines Within a Def</h3>
+
+<p>If the lines of code have have natural phases — a few lines setting 
+up the file, a few lines sorting the keys — use blank lines within the 
+def to separate these phases from each other, much like dividing an 
+essay into paragraphs. The standard says to use blank lines "sparingly".
+
+<span id="notequal"></span>
+</p><h3>Prefer <code>!=</code> and <code>not in</code></h3>
+
+<p>This is a preference between two equivalent forms which both work 
+correctly. We prefer the "shortcut" forms for not-equal and not-in 
+testing, like this:
+
+</p><pre>if not s == 'donut':        # NO
+    ...
+
+if s != 'donut':            # YES
+    ...
+
+
+if not 'donut' in foods:    # NO
+    ...
+
+if 'donut' not in foods:    # YES
+    ...
+</pre>
+
+<p>These forms arrange the code more in line with the natural phrasing, like "s is not donut" or "donut is not in foods".
+
+
+<span id="equaltrue"></span>
+</p><h3>Do Not Write: if x == True</h3>
+
+<p>The way that boolean True/False is evaluated in an if/while test is a
+ little more complicated than it appears. The simple rule is this: do 
+not write <code>if x == True</code> or <code>if x == False</code> in an if/while test.
+
+</p><p>Say we have a <code>print_greeting()</code> function that takes in a <code>shout_mode</code> parameter.
+
+</p><p>Do not write this:
+
+</p><pre>def print_greeting(words, shout_mode):
+    if shout_mode == True:   # NO not like this
+        print(words.upper())
+    else
+        print(words)
+</pre>
+
+
+<p>The <code>if</code> structure can distinguish <code>True</code> vs. <code>False</code> values itself. Therefore, write the code to give the boolean <code>shout_mode</code> to the <code>if</code> directly, like this:
+
+</p><pre>def print_greeting(words, shout_mode):
+    if shout_mode:           # YES like this
+        print(words.upper())
+    else:
+        print(words)
+</pre>
+
+<p>To invert the logic do not use <code>== False</code>. Use <code class="b">not</code> like this:
+
+</p><pre>def print_greeting(words, shout_mode):
+    if not shout_mode:
+        print('Not shouting')
+    else:
+        print(words)
+</pre>
+
+<span id="pass"></span>
+
+<h2>Compare With <code>==</code></h2>
+
+<p>What is the common way to compare two values in Python? The answer is: use the <code>==</code> operator
+like this:
+
+</p><pre>if word == 'meh':
+    print('Enthusiasm low')
+</pre>
+
+<p>It works for strings, it works for ints, it works for lists, it works for pretty much everything. Knowing the <code>==</code> operator is the main thing. However, there is one exception shown below.
+
+<span id="isnone"></span>
+</p>
+<h2>History of Long Lines</h2>
+
+<p>In the old days of relatively small computer displays, projects would
+ frequently have a rule that no line in the code could be wider than 80 
+or 100 characters, so that the code would fit on the display. This sort 
+of rule has become less common. Often in Python, the simplest thing to 
+do is just let a long line be long.
+
+</p><p>However if a line is so long that it's hard to read or work with,
+ here are a couple techniques to break a long line into shorter, 
+separate lines.
+
+<span id="longparam"></span>
+</p><h2>Break Up Line of Parameters</h2>
+
+<p>Suppose there is a function call line that is long because there are many parameters, like this:
+
+</p><pre>draw_background_shape(selected_shape.x, selected_shape.y, sub_width + MARGIN, sub_height * MARGIN, selected_color)
+</pre>
+
+<p>To break up this long line, add a newline after a comma, and indent 
+the later lines so the parameters have the same indent as the parameters
+ above, like this:
+
+</p><pre>draw_background_shape(selected_shape.x, selected_shape.y,
+                      sub_width + MARGIN, sub_height * MARGIN,
+                      selected_color)
+</pre>
+
+<span id="longparen"></span>
+<h2>Break Up a Long Line With Parenthesis</h2>
+
+<p>If Python sees a line with a left parenthesis <code>(</code> without a matching right parenthesis, Python treats the later lines as continuations of the first line until the matching <code>)</code> is reached. This works for <code>[</code> and <code>{</code> as well.
+
+</p><p>For example, suppose have this long if-test:
+
+</p><pre>if selected_x &gt;= 0 and selected_x &lt; shape.width and selected_y &gt;= 0 and selected_y &lt; shape.height:
+   return True
+</pre>
+
+<p>The long test expression can be broken into several lines, adding a 
+pair of parenthesis around the whole thing. The second and later lines 
+should be indented an <b>additional</b> 4 spaces, so they do not accidentally line up with with the subsequent body lines.
+
+</p><pre>if (selected_x &gt;= 0 and
+        selected_x &lt; shape.width and  # additional indent
+        selected_y &gt;= 0 and
+        selected_y &lt; shape.height):
+   return True
+</pre>
+
+<p>There is also a preference that the last word on each line is an operator, like <code>and</code> or <code>+</code>, so it reinforces the idea that there's more on the later lines.
+
+</p><h2>Named Parameter Exception</h2>
+
+<p>There is an exception to the 1-space-between-items rule, but it's for
+ a rare case. If a function call has named parameters, no spaces are 
+needed around the <code>=</code> like this:
+
+</p><pre>print('hi', end='')
+</pre>
+
+<p>I think the reasoning here is that this use of <code>=</code> is different the more common variable assignment <code>=</code>, so it's good to make this use look a little different.
+
+
+
+</p><hr>
+
+<p>Naming quirks:
+
+</p><h3>Python Keywords</h3>
+
+<p>A few words like <code>def</code>, <code>for</code>, and <code>if</code> are fixed "keywords" in Python, so you cannot use those words as variable or function names. Here is the list of keywords:
+
+</p><pre>&gt;&gt;&gt;<b> import keyword</b>
+&gt;&gt;&gt;<b> keyword.kwlist</b>
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</pre>
+
+<span id="lenrule"></span>
+<h3>The "len" Rule: Do Not Use Builtin Functions as a Variable Names</h3>
+
+<p>Python has many  built-in functions like <code>len()</code> and <code>min()</code>. As a strange example of Python's flexibility, your code can use assignment <code class="b">=</code> to change what <code>len</code> means within your code .. probably a huge mistake!
+
+</p><pre>&gt;&gt;&gt;<b> len('hello')  </b> # len function works
+5
+&gt;&gt;&gt;<b> len = 7       </b> # redefine "len" to be 7, bad idea
+&gt;&gt;&gt;<b> len('hello')  </b> # oh noes!
+TypeError: 'int' object is not callable
+</pre>
+
+<p>Here is the simple rule: do not use the name of a common function as a variable name. Here are the most common function names:
+
+</p><pre>len abs min max int float list str dict range map filter format
+</pre>
+
+<p>Rather than memorize the list of all the function names to avoid, it is sufficient to avoid using the names of functions that <i>your code uses</i>, typically the well known functions like <code>len</code>, <code>range</code>, <code>min</code>, and so on.
+
+</p><p>Incidentally, this is why we avoid using "str" or "list" as variable names, instead using "s" and "lst".
+
+</p>
+</main>
+
+
+
+<main>
+  <h1>Python Style Part 2 - Readability</h1>
+<h2>Readable Code</h2>
+  <p>What is the best code? Different situations call for different goals, but an excellent all purpose goal for code is that it is <b>readable</b>.
+    When someone looks at the code, what it does is apparent. The code 
+    "reads", as the combination of function names and variable names narrate
+    what it does. </p>
+  <p>Readable code tends to be less buggy, since a bug is a case where
+    what the code says literally diverges from what the author had in mind. </p>
+  <h2>Good Function Names</h2>
+  <p>Good function names are the first step in readable code. Function 
+    names often use verbs indicating what calling the function will 
+    accomplish. Look at how the function names below make the surrounding 
+    code read nicely. </p>
+  <pre>delete_files(files)
+
+
+if is_url_sketchy(url):
+  ...
+
+
+s = remove_digits(s)
+
+
+count = count_duplicates(coordinates)
+
+
+canvas.draw_line(0, 0, 10, 10)
+
+  </pre>
+  <p>The name of a function does not need to spell out every true detail 
+    about it. In Python, the sweet spot is probably one to three words, 
+    separated by underbars <code>_</code>, summarizing the main idea of the function. </p>
+  <h2>Principle Of Least Surprise</h2>
+  <p>The Principle of Least Surprise is a convention for function names. When designing a function, e.g. <code>is_url_sketchy(url)</code>,
+    imagine that another programmer is writing code to call this function. 
+    Assume that all the other programmers knows is its name since they don't
+    bother to read the documentation. Therefore, the function should only 
+    take actions that one might expect given its name. So <code>is_url_sketchy()</code> should not, say, delete a bunch of files. </p>
+  <h2>Boolean Functions: is_xxx() has_xxx()</h2>
+  <p>If a function returns a boolean value, starting its name with <code>is_</code> or <code>has_</code> can be a good choice. Think about how the function call will read when used in an if or while: </p>
+  <pre>if is_weak(password):
+    ...
+
+  </pre>
+  <h2>Idiomatic Short Variable Names</h2>
+  <p>There are some circumstances that are so common and idiomatic, that 
+    there are standard, idiomatic short variable names tuned for that 
+    situation. </p>
+  <ul class="slide">
+    <li><code>s</code> - idiomatic generic string </li>
+    <li><code>ch</code> or <code>char</code> - character from a string </li>
+    <li><code>i, j, k</code> - idiomatic index loop: 0, 1, 2, ... max-1 </li>
+    <li><code>x, y</code> - idiomatic x, y 2-d coordinates <br>
+      Use to store x,y coordinate values <br>
+      Use these to loop across 2-d <br>
+      e.g. <code>for x in range(image.width):</code> </li>
+    <li><code>n</code> - idiomatic generic int value </li>
+    <li><code>f</code> - idiomatic opened file </li>
+    <li><code>lst</code> - idiomatic list variable <br>
+      There is no 1-letter variable for lists, since lowercase <code>'l'</code> should be avoided </li>
+    <li><code>d</code> - idiomatic dict variable </li>
+  </ul>
+  <p>Never name a variable lowercase L or O - these look too much like the digits 1 and 0. </p>
+  <h2>What Generic <code>s</code> Means</h2>
+  <p>Using a generic variable like the string <code>s</code> in <code>brackets(s):</code> means the function should work with any string and we are not making 
+    any more specific claim about the input string. If we were writing a 
+    function that took a url string or an email string, we would name the 
+    parameter <code>url</code> or <code>email</code>. </p>
+  <hr>
+  <h2>Avoid Re-Computation - Store in Var</h2>
+  <p>Suppose we have this loop - n copies of the lowercase form of s. This code is fine, we will just point out a slight improvement. </p>
+  <pre>def n_copies(s, n):
+    result = ''
+    for i in range(n):
+        result += s.lower()
+    return result
+  </pre>
+  <p>Notice that <code>s.lower()</code> computes the lowercase form of s <b>in the loop</b>. The readability is fine, but the code computes that lowercase form again and again and again. The lowercase of <code>'Hello'</code> is  the same <code>'hello'</code> every time through the loop. This is a little wasteful. Could compute 
+    it once, store in a variable, use the variable in the loop: </p>
+  <pre>def n_copies(s, n):
+    result = ''
+    low = s.lower()
+    for i in range(n):
+        result += low
+    return result
+  </pre>
+  <p>This is a slight improvement. It would be especially important if the <code>s.lower()</code> computation was slow. The most important requirement of a function is 
+    calling its helpers correctly to compute the correct result. Here we are
+    looking at a secondar goal - is there unnecessary re-computation we 
+    could eliminate. </p>
+  <hr>
+  <p class="small">Copyright 2020 Nick Parlante </p>
+</main>
+</body></html>

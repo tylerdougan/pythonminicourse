@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class=" rcamszyi idc0_336"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="Style%20Readable_files/book.css">
+<script src="Style%20Readable_files/book.js"></script>
+
+<style>
+pre.reveal { }  /* mark pre that should get this setup */
+span.phide { display:none; }
+span.pshow { color:darkgreen;} /* display:inline; */
+
+
+</style>
+
+<title>Style Readable</title></head>
+<body>
+
+<nav><div id="toc"><p class="entry big"><a href="https://cs.stanford.edu/people/nick/py/">Python Guide</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-about.html">About Python</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-interpreter.html">Python Interpreter</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-command.html">Command Line</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-keyboard.html">Keyboard Shortcuts</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-style1.html">Style1</a></p>
+<p class="entry yellow"><a href="https://cs.stanford.edu/people/nick/py/python-style-readable.html">Style Readable</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-style-decomposition.html">Style Decomp</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-var.html">Variables</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-math.html">Math</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-function.html">Functions</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-debugging.html">Debugging</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-doctest.html">Doctests</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-for.html">For Loop</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-while.html">While Loop</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-if.html">If and Comparisons</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-boolean.html">Boolean and or not</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-range.html">Range</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-string.html">Strings</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-print.html">print() Standard Out</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-input.html">input()</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-file.html">File Read Write</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-list.html">Lists</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-main.html">main() Command Line Args</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-dict.html">Dicts</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-nocopy.html">Python No Copy / is</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-tuple.html">Tuples</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-map-lambda.html">Map Lambda</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-comprehension.html">Comprehensions</a></p>
+<p class="entry"><a href="https://cs.stanford.edu/people/nick/py/python-sort.html">Sorting</a></p>
+<p class="entry">&nbsp;</p>
+</div></nav>
+
+<main>
+
+<h1>Python Style Readable</h1>
+
+
+<h2>Readable Code</h2>
+
+<p>What is the best code? Different situations call for different goals, but an excellent all purpose goal for code is that it is <b>readable</b>.
+ When someone looks at the code, what it does is apparent. The code 
+"reads", as the combination of function names and variable names narrate
+ what it does.
+
+</p><p>Readable code tends to be less buggy, since a bug is a case where
+ what the code says literally diverges from what the author had in mind.
+
+
+</p><h2>Good Function Names</h2>
+
+<p>Good function names are the first step in readable code. Function 
+names often use verbs indicating what calling the function will 
+accomplish. Look at how the function names below make the surrounding 
+code read nicely.
+
+
+</p><pre>delete_files(files)
+
+
+if is_url_sketchy(url):
+  ...
+
+
+s = remove_digits(s)
+
+
+count = count_duplicates(coordinates)
+
+
+canvas.draw_line(0, 0, 10, 10)
+
+</pre>
+
+<p>The name of a function does not need to spell out every true detail 
+about it. In Python, the sweet spot is probably one to three words, 
+separated by underbars <code>_</code>, summarizing the main idea of the function.
+
+</p><h2>Principle Of Least Surprise</h2>
+
+<p>The Principle of Least Surprise is a convention for function names. When designing a function, e.g. <code>is_url_sketchy(url)</code>,
+ imagine that another programmer is writing code to call this function. 
+Assume that all the other programmers knows is its name since they don't
+ bother to read the documentation. Therefore, the function should only 
+take actions that one might expect given its name. So <code>is_url_sketchy()</code> should not, say, delete a bunch of files.
+
+
+</p><h2>Boolean Functions: is_xxx() has_xxx()</h2>
+
+<p>If a function returns a boolean value, starting its name with <code>is_</code> or <code>has_</code> can be a good choice. Think about how the function call will read when used in an if or while:
+
+</p><pre>if is_weak(password):
+    ...
+
+</pre>
+<h2>Idiomatic Short Variable Names</h2>
+
+<p>There are some circumstances that are so common and idiomatic, that 
+there are standard, idiomatic short variable names tuned for that 
+situation.
+
+</p><ul class="slide">
+<li><code>s</code> - idiomatic generic string
+</li><li><code>ch</code> or <code>char</code> - character from a string
+</li><li><code>i, j, k</code> - idiomatic index loop: 0, 1, 2, ... max-1
+</li><li><code>x, y</code> - idiomatic x, y 2-d coordinates
+<br>Use to store x,y coordinate values
+<br>Use these to loop across 2-d
+<br>e.g. <code>for x in range(image.width):</code>
+</li><li><code>n</code> - idiomatic generic int value
+</li><li><code>f</code> - idiomatic opened file
+</li><li><code>lst</code> - idiomatic list variable
+<br>There is no 1-letter variable for lists, since lowercase <code>'l'</code> should be avoided
+</li><li><code>d</code> - idiomatic dict variable
+</li></ul>
+
+<p>Never name a variable lowercase L or O - these look too much like the digits 1 and 0.
+
+</p><h2>What Generic <code>s</code> Means</h2>
+
+<p>Using a generic variable like the string <code>s</code> in <code>brackets(s):</code>
+ means the function should work with any string and we are not making 
+any more specific claim about the input string. If we were writing a 
+function that took a url string or an email string, we would name the 
+parameter <code>url</code> or <code>email</code>. 
+
+
+</p><hr>
+
+<h2>Avoid Re-Computation - Store in Var</h2>
+
+<p>Suppose we have this loop - n copies of the lowercase form of s. This code is fine, we will just point out a slight improvement.
+
+</p><pre>def n_copies(s, n):
+    result = ''
+    for i in range(n):
+        result += s.lower()
+    return result
+</pre>
+
+<p>Notice that <code>s.lower()</code> computes the lowercase form of s <b>in the loop</b>. The readability is fine, but the code computes that lowercase form again and again and again. The lowercase of <code>'Hello'</code> is  the same <code>'hello'</code>
+ every time through the loop. This is a little wasteful. Could compute 
+it once, store in a variable, use the variable in the loop:
+
+</p><pre>def n_copies(s, n):
+    result = ''
+    low = s.lower()
+    for i in range(n):
+        result += low
+    return result
+</pre>
+
+<p>This is a slight improvement. It would be especially important if the <code>s.lower()</code>
+ computation was slow. The most important requirement of a function is 
+calling its helpers correctly to compute the correct result. Here we are
+ looking at a secondar goal - is there unnecessary re-computation we 
+could eliminate. 
+
+</p><hr>
+<p class="small">Copyright 2020 Nick Parlante
+
+</p></main>
+
+
+
+</body></html>
